@@ -275,7 +275,7 @@ header.sticky {
   }
 }
 
-img {
+.img {
   margin-left: 25%;
   opacity: 50;
   border-radius: 4px;
@@ -837,39 +837,117 @@ html {
   scroll-behavior: smooth;
 }
 
-/*body*/
+/* Media Queries for Mobile View */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 10px 5%;
+  }
 
-@media screen and (max-width: 1000px) {
+  .home {
+    padding: 0 5%;
+    height: auto;
+    justify-content: flex-start;
+  }
+
   .home-content h1 {
-    font-size: 35px;
-    line-height: 40px;
+    font-size: 36px;
+    line-height: 1.1;
   }
 
   .home-content h3 {
-    width: 100%;
-    font-size: 25px;
-    font-weight: 400;
-    color: #00abf0;
+    font-size: 24px;
   }
+
+  .home-content p {
+    font-size: 14px;
+  }
+
+  .btn-box {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .btn-box a {
+    width: 100%;
+    max-width: none;
+    height: 40px;
+  }
+
+  .navbar {
+    display: none;
+  }
+  
+
+  /* Enable hamburger menu for mobile view */
+  .hamburger {
+    display: flex;
+  }
+
+  .home-sci {
+    justify-content: space-around;
+    gap: 10px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    flex-direction: column;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .home-content h1 {
+    font-size: 28px;
+  }
+
+  .home-content h3 {
+    font-size: 20px;
+  }
+
   .home-content p {
     font-size: 12px;
   }
-  .home-content .btn-box {
-    margin-top: 20px;
-    width: 200px;
-    height: 25px;
+
+  .btn-box a {
+    font-size: 16px;
   }
 
-  .home-imgHover {
-    right: 10px;
-    width: 300px;
-    height: 100%;
-    background: transparent;
-    transition: 3s;
+  .home-sci a {
+    width: 30px;
+    height: 30px;
   }
-  .img {
-    width: 100px;
-    height: 150;
-    position: relative;
+  img {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    flex-direction: column;
   }
+  /* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+  background-color: #060606;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header.sticky {
+  padding: 10px 5%;
+}
+
+.logo {
+  font-size: 22px;
+  color: #ededed;
+}
 }
