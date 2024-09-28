@@ -285,46 +285,7 @@ header.sticky {
   filter: blur(20 position);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  background: #081b29;
-  color: #ededed;
-}
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 10%;
-  background: transparent;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-}
-.logo {
-  position: relative;
-  font-size: 25px;
-  color: #ededed;
-  text-decoration: none;
-  font-weight: 600;
-}
-.logo::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #081b29;
-  animation: showRigth 1s ease forwards;
-  animation-delay: 0.4s;
-}
+
 .navbar a {
   font-size: 18px;
   color: #ededed;
@@ -747,6 +708,12 @@ footer .contact-info a:hover {
 }
 .social-media{
   padding-left: 350px;
+  position: relative;
+  right: 250px;
+}
+.quick-links{
+  position: relative;
+  left: 80px;
 }
 
 /* Footer sections */
@@ -792,247 +759,180 @@ footer .contact-info a:hover {
   color: #eae9e9;
 }
 
-/* Media Queries */
-@media screen and (max-width: 1024px) {
-  footer.contact {
-    padding: 40px 5%;
+/* General Styles for all screens */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Media Queries for Laptop Screens (1024px to 1440px) */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .navbar a {
+    padding: 0 20px;
   }
 
-  footer .section-title {
-    font-size: 24px;
+  .home-content h1 {
+    font-size: 2.5rem;
   }
 
-  footer .contact-info p {
-    font-size: 16px;
+  .home-content p {
+    font-size: 1.2rem;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for laptops */
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for laptops */
+  }
+
+  .contact-info {
+    font-size: 1rem;
+  }
+}
+
+/* Media Queries for Mobile Devices (up to 768px) */
+@media screen and (max-width: 768px) {
+  .navbar a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .home-content h1 {
+    font-size: 6rem;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+  }
+
+  .home img {
+    width: 100%; /* Responsive image for mobile */
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr; /* One column for mobile */
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr; /* One column for mobile */
+  }
+
+  .contact-info {
+    font-size: 0.9rem;
+  }
+
+  .btn-box a {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+  }
+
+  .footer-sections {
+    display: block;
+  }
+
+  .footer-sections ul {
+    padding-left: 0;
+  }
+
+  .footer-sections h3 {
+    margin-top: 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .contact-info,
+  .footer-sections {
+    flex-basis: 100%;
+    margin-bottom: 30px;
   }
 
   .footer-sections {
     flex-direction: column;
+  }
+
+  .footer-sections p {
     text-align: center;
   }
 
-  .footer-sections div {
-    width: 100%;
+  .social-media,
+  .quick-links {
+    flex-basis: 100%;
     margin-bottom: 20px;
   }
+
 }
 
-@media screen and (max-width: 768px) {
-  footer.contact {
-    padding: 30px 5%;
-  }
-
-  footer .section-title {
-    font-size: 20px;
-  }
-
-  footer .contact-info p {
-    font-size: 14px;
-  }
-
-  .footer-bottom {
-    font-size: 14px;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* Media Queries for Mobile View */
-@media screen and (max-width: 768px) {
-  .header {
-    padding: 10px 5%;
-  }
-
-  .home {
-    padding: 0 5%;
-    height: auto;
-    justify-content: flex-start;
-    position: relative;
+/* Extra small screens (less than 480px) */
+@media screen and (max-width: 480px) {
+  body{
     padding-left: 50px;
-    padding-top: 100px;
-    
+    margin: auto;
+  }
+
+  .navbar a {
+    font-size: 14px;
   }
 
   .home-content h1 {
-    font-size: 56px;
-    line-height: 1.1;
-    padding-top: 50px;
-  }
-
-  .home-content h3 {
-    font-size: 44px;
-    padding-top: 50px;
+    font-size: 4rem;
   }
 
   .home-content p {
-    font-size: 34px;
-    padding-top: 50px;
-    
+    font-size: 0.9rem;
   }
 
-  .btn-box {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
+  .project-card, .experience-item, .skill-category {
+    padding: 10px;
   }
-
-  .btn-box a {
-    width: 100%;
-    max-width: none;
-    height: 40px;
-  }
-
-  
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding-left: 50px;
-}
-
-.projects{
-  padding-left: 50px;
-}
-.project-card {
-  background: #112e42;
-
-
-}
-
-.home-sci{
-  padding-top: 100px;
-}
   .navbar {
-    display: none;
+    display: none; /* This will hide the navbar */
   }
-  .experience-timeline {
-    padding-left: 50px;
+  .contact-info h3,
+  .social-media h3,
+  .quick-links h3 {
+    font-size: 1.5em;
+    text-align: center;
   }
-  
-  .experience-item {
-    
-    padding-left: 50px;
+  .footer-content {
+    flex-direction: column;
   }
-  .skills-grid {
-   padding-left: 50px;
-  }
-  
-  .skill-category {
-   padding-left: 50px;
-  }
-  
-  .skill-category h3 {
-   padding-left: 50px;
-  }
-  .footer-sections {
-  padding-left: 40px;
-  margin-bottom: auto;
-  text-align: center;
-  }
-  
-  .footer-sections div {
-    padding-left: 40px;
 
+  .contact-info,
+  .footer-sections {
+    flex-basis: 100%;
+    margin-bottom: 30px;
   }
-  
-  .footer-sections h3 {
-    padding-left: 40px;
+
+  .footer-sections {
+    flex-direction: column;
   }
-  
-  .footer-sections ul {
-    padding-left: 30px;
+
+  .footer-sections p {
+    text-align: center;
   }
-  
-  .section-title{
-    padding-left: 100px;
-  }
-  .contact{
-    padding-left: 70px;
-  }
-  .contact-info{
-    padding-left: 50px;
+
+  .social-media,
+  .quick-links {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+    padding-right: 20px;
+
   }
  
+
+  /* Optional: Show navbar when screen size is above mobile */
+  @media screen and (min-width: 769px) {
+    .navbar {
+      display: flex; /* Show navbar on larger screens */
+    }
+  }
   
 
-  /* Enable hamburger menu for mobile view */
-  .hamburger {
-    display: flex;
-  }
-
-  .home-sci {
-    justify-content: space-around;
-    gap: 10px;
-    padding-top: 900px;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    flex-direction: column;
-  }
+  
 }
 
-
-@media screen and (max-width: 480px) {
-  .home-content h1 {
-    font-size: 48px;
-  }
-
-  .home-content h3 {
-    font-size: 30px;
-  }
-
-  .home-content p {
-    font-size: 22px;
-  }
-
-  .btn-box a {
-    font-size: 16px;
-  }
-
-  .home-sci a {
-    width: 30px;
-    height: 30px;
-  }
-  img {
-    margin-top: 20px;
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border-radius: 8px;
-    flex-direction: column;
-  }
-  /* Header */
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px 10%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 9999;
-  background-color: #060606;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-header.sticky {
-  padding: 10px 5%;
-}
-
-.logo {
-  font-size: 22px;
-  color: #ededed;
-}
-.home-sci{
-  padding-top: 500px;
-  height: 700px;
-  max-height: 800px;
-}
-
-}
